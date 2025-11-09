@@ -1,0 +1,745 @@
+<!doctype html>
+<html lang="es">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Show Infinito RP</title>
+    <link rel="icon" href="img/showinfinitorp.png">
+
+    <style>
+        /* ---------- ESTILOS CSS ---------- */
+        :root {
+            --bg: #0b0f14;
+            --card: #0f1720;
+            --muted: #99a0ab;
+            --accent: #9721c5;
+            --glass: rgba(255, 255, 255, 0.03);
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0
+        }
+
+        body {
+            background: linear-gradient(180deg, #07090b, #0b1116);
+            color: #e6eef6;
+            font-family: Inter, Segoe UI, Arial;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: auto;
+            padding: 20px
+        }
+
+        header {
+            padding: 15px 20px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            backdrop-filter: blur(4px);
+            z-index: 20;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 20px;
+            color: #fff
+        }
+
+        header small {
+            color: var(--muted);
+            display: block;
+            margin-top: 4px
+        }
+
+        header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 10px 30px;
+        }
+
+        header {
+            padding: 15px 20px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            backdrop-filter: blur(6px);
+            z-index: 20;
+            background: rgba(0, 0, 0, 0.3);
+        }
+
+
+        .sponsor-logos {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .server-logo {
+            height: 45px;
+            width: auto;
+        }
+
+        .icc-logo {
+            height: 35px;
+            opacity: 0.9;
+            transition: transform 0.3s ease;
+        }
+
+        .icc-logo:hover {
+            transform: scale(1.05);
+        }
+
+        .logo-x {
+            color: #aaa;
+            font-size: 22px;
+            font-weight: 600;
+            opacity: 0.6;
+        }
+
+
+        .server-logo {
+            height: 50px;
+            width: auto;
+            cursor: pointer;
+            transition: transform 0.3s ease, opacity 0.3s ease;
+        }
+
+        .server-logo:hover {
+            transform: scale(1.05);
+            opacity: 0.9;
+        }
+
+        .discord-icon {
+            width: 38px;
+            height: 38px;
+            cursor: pointer;
+            transition: transform 0.3s ease, opacity 0.3s ease;
+        }
+
+        .discord-icon:hover {
+            transform: scale(1.1);
+            opacity: 0.85;
+        }
+
+
+        .discord-icon {
+            width: 42px;
+            height: 42px;
+            object-fit: contain;
+            cursor: pointer;
+            transition: transform 0.2s ease, filter 0.3s ease;
+        }
+
+        .discord-icon:hover {
+            transform: scale(1.1);
+            filter: drop-shadow(0 0 6px #5865F2);
+        }
+
+
+        .main-grid {
+            margin-top: 20px;
+            display: grid;
+            grid-template-columns: 1fr 380px;
+            gap: 20px;
+        }
+
+        .card {
+            background: rgba(255, 255, 255, 0.02);
+            padding: 15px;
+            border-radius: 12px;
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.5);
+        }
+
+        .leader-list {
+            display: flex;
+            flex-direction: column;
+            gap: 12px
+        }
+
+        .leader-item {
+            display: flex;
+            align-items: center;
+            background: rgba(0, 0, 0, 0.25);
+            padding: 10px;
+            border-radius: 10px;
+            cursor: pointer;
+        }
+
+        .leader-rank {
+            font-weight: 700;
+            padding: 10px;
+            width: 45px;
+            text-align: center;
+            border-radius: 10px;
+            background: rgba(255, 255, 255, 0.05)
+        }
+
+        .faq-question {
+            cursor: pointer;
+            font-size: 17px;
+            margin: 10px 0;
+            padding: 8px 12px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 8px;
+            transition: background 0.3s;
+        }
+
+        .faq-question:hover {
+            background: rgba(255, 255, 255, 0.1);
+        }
+
+        .faq-answer {
+            margin-left: 20px;
+            margin-top: 8px;
+            color: #c5cdd8;
+            display: none;
+            line-height: 1.6;
+        }
+
+        .faq-answer.show {
+            display: block;
+        }
+
+
+        .leader-logo {
+            width: 50px;
+            height: 50px;
+            background: #000;
+            border-radius: 50%;
+            margin-left: 10px;
+            border: 2px solid rgba(255, 255, 255, 0.1)
+        }
+
+        .leader-logo img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 50%
+        }
+
+        .leader-meta {
+            flex: 1;
+            margin-left: 12px
+        }
+
+        .leader-meta h3 {
+            font-size: 17px;
+            margin: 0
+        }
+
+        .leader-meta small {
+            color: var(--muted);
+            font-size: 13px
+        }
+
+        .leader-points {
+            font-weight: 900;
+            font-size: 18px
+        }
+
+        .progress {
+            width: 100%;
+            height: 10px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 6px;
+            overflow: hidden;
+            margin-top: 6px
+        }
+
+        .progress i {
+            display: block;
+            background: var(--accent);
+            height: 100%;
+            transition: width .5s ease
+        }
+
+        .event-row,
+        .activity-row {
+            padding: 10px;
+            border-radius: 8px;
+            background: rgba(255, 255, 255, 0.03);
+            margin-bottom: 8px;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .modal {
+            position: fixed;
+            inset: 0;
+            background: rgba(0, 0, 0, .6);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .modal.hidden {
+            display: none
+        }
+
+        .modal-inner {
+            background: var(--card);
+            padding: 20px;
+            border-radius: 12px;
+            width: 90%;
+            max-width: 600px;
+            position: relative;
+        }
+
+        .modal-close {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            color: #fff;
+            background: none;
+            border: none;
+            font-size: 20px;
+            cursor: pointer;
+        }
+
+        /* ---- NUEVOS ESTILOS PARA LAS SEMANAS ---- */
+        .week-header {
+            cursor: pointer;
+            font-size: 18px;
+            margin: 10px 0;
+            padding: 8px 12px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 8px;
+            transition: background 0.3s;
+        }
+
+        .week-header:hover {
+            background: rgba(255, 255, 255, 0.1);
+        }
+
+        .week-list {
+            margin-left: 20px;
+            margin-top: 8px;
+            list-style: none;
+            line-height: 1.8;
+        }
+
+        .week-list.hidden {
+            display: none;
+        }
+
+        .week-list li {
+            margin-bottom: 4px;
+        }
+
+        /* ===== Footer ===== */
+        footer {
+            text-align: center;
+            margin-top: 40px;
+            padding: 20px 0;
+            color: #c5cdd8;
+            background: #0a0a0a;
+        }
+
+        .footer-content {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+
+        .footer-logo {
+            width: 120px;
+            opacity: 0.9;
+            transition: opacity 0.3s ease;
+        }
+
+        .footer-logo:hover {
+            opacity: 1;
+        }
+
+        .footer-line {
+            width: 80%;
+            margin: 20px auto 10px auto;
+            border: 0;
+            border-top: 1px solid #333;
+        }
+
+        .footer-copy {
+            font-size: 0.9rem;
+            color: #8a8f99;
+        }
+
+        .footer-copy .dev-link {
+            color: #c5cdd8;
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.3s ease;
+        }
+
+        .footer-copy .dev-link:hover {
+            color: #00ff7f;
+            /* Verde brillante */
+            text-shadow: 0 0 6px #00ff7f;
+        }
+
+
+
+
+
+
+        @media(max-width:800px) {
+            .main-grid {
+                grid-template-columns: 1fr
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+  <div class="header-left">
+    <div class="sponsor-logos">
+      <a href="#top">
+        <img src="img/showinfinitorp.png" alt="ShowInfinitoRP" class="server-logo">
+      </a>
+      <span class="logo-x">×</span>
+      <a href="https://iccagencylatam.com/" target="_blank">
+        <img src="img/iccagency.png" alt="ICC Agency" class="icc-logo">
+      </a>
+    </div>
+  </div>
+  <div class="header-right">
+    <a href="https://discord.gg/TUSERVER" target="_blank">
+      <img src="img/discord.png" alt="Discord" class="discord-icon">
+    </a>
+  </div>
+</header>
+
+
+
+
+
+
+    <div class="container main-grid">
+
+        <!-- LEADERBOARD -->
+        <section class="card">
+            <h2 style="text-align: center;">Ranking General</h2>
+            <div id="leaderList" class="leader-list"></div>
+        </section>
+
+        <!-- SISTEMA DE PUNTOS -->
+        <section class="card">
+            <h2 style="text-align: center;">Sistema de Puntos</h2>
+
+            <h3 style="margin-top:15px">Eventos Semanales</h3>
+            <div class="event-row">
+                <strong>1er Lugar</strong>
+                <span>250 pts</span>
+            </div>
+            <div class="event-row">
+                <strong>2do Lugar</strong>
+                <span>180 pts</span>
+            </div>
+            <div class="event-row">
+                <strong>3er Lugar</strong>
+                <span>120 pts</span>
+            </div>
+
+            <h3 style="margin-top:20px;">Actividades Diarias</h3>
+
+            <div class="event-row">
+                <div>
+                    <strong>Banco Central</strong><br>
+                    <small>1 cada 2 días</small>
+                </div>
+                <span>85 pts</span>
+            </div>
+
+            <div class="event-row">
+                <div>
+                    <strong>Joyería</strong><br>
+                    <small>1 por día</small>
+                </div>
+                <span>50 pts</span>
+            </div>
+
+            <div class="event-row">
+                <div>
+                    <strong>Ammu-Nation</strong><br>
+                    <small>2 por día</small>
+                </div>
+                <span>20 pts</span>
+            </div>
+
+            <div class="event-row">
+                <div>
+                    <strong>Tienda</strong><br>
+                    <small>4 por día</small>
+                </div>
+                <span>10 pts</span>
+            </div>
+
+        </section>
+    </div>
+
+    <!-- SECCIÓN DETALLES DE SEMANA -->
+    <div class="container">
+        <section class="card" id="weekDetails" style="margin-top:20px;">
+            <h2 style="text-align: center;">Eventos</h2>
+            <div id="weekContent" style="margin-top:10px; line-height:1.6; color:#c5cdd8;">
+                <div class="week-block">
+                    <div class="week-header" data-target="week1"> <strong>SEMANA 1</strong></div>
+                    <ul id="week1" class="week-list hidden">
+                        <li>1. Cargamento Letal</li>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil cupiditate voluptatibus, magni
+                            natus reiciendis, enim eius id veritatis quas ratione harum voluptates atque dolorum optio
+                            at? Rerum a, mollitia omnis facere nihil soluta doloribus! Inventore, autem? Repudiandae,
+                            quae cupiditate! Dicta esse in animi neque accusantium, est, aperiam ab eos perspiciatis
+                            alias accusamus libero. Doloremque, accusamus. Veritatis quae sed esse hic fuga aut suscipit
+                            illo totam, mollitia nostrum sint quia quidem praesentium necessitatibus beatae ut voluptate
+                            doloribus odit exercitationem porro, aliquam tempora. Consectetur tenetur, esse, cupiditate
+                            eligendi vitae voluptatibus magni quibusdam aspernatur, cum aperiam dignissimos alias nisi
+                            voluptates commodi laboriosam quos.</p>
+                        <li>2. Interceptar el Convoy</li>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam, eum a cupiditate dolorem
+                            minus libero delectus ratione excepturi voluptatibus soluta autem, atque nisi maxime earum,
+                            iusto tempora assumenda repellat inventore? Sint nesciunt porro eum aliquam optio, quia
+                            tenetur laborum ducimus nostrum quasi accusantium sit culpa, aut incidunt molestiae modi
+                            voluptates eaque id ab delectus repellendus impedit! Aliquam, sed omnis odit a illo
+                            quibusdam ullam porro similique iusto sapiente nemo quis asperiores magni voluptatem
+                            quisquam. Ab quisquam debitis sint sed velit quam dignissimos possimus, dolorum beatae ipsam
+                            mollitia, repellendus animi ad reiciendis aliquid! Quis, laudantium amet aspernatur placeat
+                            soluta officia repudiandae?</p>
+                    </ul>
+                </div>
+                <div class="week-block">
+                    <div class="week-header" data-target="week2"> <strong>SEMANA 2</strong></div>
+                    <ul id="week2" class="week-list hidden">
+                        <li>1. Dominio de Pollos</li>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam, modi officia quae reiciendis
+                            eos libero itaque placeat voluptatum, dolorum deleniti quo consequatur quod iste? Harum,
+                            ipsa? Modi, placeat? Ducimus laborum quas commodi veritatis quisquam asperiores tempora
+                            adipisci placeat sequi, aut suscipit ullam enim deleniti sint, minus, ipsum reprehenderit
+                            cumque rem? Doloremque ratione incidunt nesciunt at delectus eligendi, cupiditate officia
+                            tenetur laboriosam id aspernatur expedita est amet quod eius. Hic earum culpa quidem eum
+                            voluptatibus dicta at itaque, officiis voluptate aspernatur. Quisquam eius magnam unde,
+                            eveniet dicta debitis. Eveniet, iusto eum eligendi earum accusantium dicta ducimus neque
+                            dolores nemo quia ab.</p>
+                        <li>2. Código Rojo: Humane</li>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eos asperiores ea id aut nihil, ad
+                            excepturi eligendi animi iste! Deleniti iste dolor recusandae at possimus quaerat, nesciunt
+                            mollitia qui, maiores corporis facere minima laudantium magni sapiente! Cupiditate harum
+                            voluptate et repellendus odio, exercitationem doloribus, explicabo saepe rerum fugiat,
+                            laudantium optio esse. Autem fugit laborum molestias ad nesciunt beatae ut est nulla tempore
+                            quidem alias, animi fugiat debitis enim iure odio omnis, ullam aut molestiae incidunt
+                            reiciendis commodi tempora dolor! Vel, esse vero doloribus illum pariatur dolore voluptate
+                            quod, delectus accusantium id aspernatur? Non architecto autem, voluptate harum iste
+                            reprehenderit qui.</p>
+                    </ul>
+                </div>
+                <div class="week-block">
+                    <div class="week-header" data-target="week3"> <strong>SEMANA 3</strong></div>
+                    <ul id="week3" class="week-list hidden">
+                        <li>1. Evento 1</li>
+                        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Delectus incidunt beatae, tempore
+                            eaque, facilis exercitationem placeat culpa officia dolor ipsa, numquam vero dolores
+                            praesentium eveniet impedit adipisci ipsam hic commodi. Quae delectus quasi placeat, vel
+                            nobis excepturi exercitationem natus enim saepe sint incidunt! Enim quam sit quo vitae harum
+                            alias, eius placeat est dolore, dolorem itaque recusandae natus in debitis pariatur laborum
+                            provident rerum neque sapiente incidunt suscipit molestiae quidem. Optio animi obcaecati
+                            consequatur saepe sunt, magnam quae corporis impedit itaque dolores atque quam voluptatum!
+                            Inventore blanditiis nisi harum pariatur voluptas quisquam. Quod esse magnam deleniti non
+                            odit, excepturi quae!</p>
+                        <li>2. Evento 2</li>
+                        <p> Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque obcaecati ducimus
+                            necessitatibus! Libero laudantium iusto, voluptas numquam, veniam aliquid reiciendis
+                            reprehenderit voluptate facilis deleniti itaque ipsa ex a enim, deserunt provident rerum
+                            debitis temporibus porro quo dicta velit? Veritatis repellat tenetur inventore temporibus
+                            corrupti mollitia ducimus cum sed, quod dicta, officia eum earum libero ex quam omnis eaque.
+                            Tenetur possimus doloremque aut minus excepturi ipsum optio distinctio enim labore deserunt
+                            fuga reprehenderit, ipsa officia dicta omnis est eos suscipit libero laudantium! At, vero
+                            qui eos corporis veniam consequatur labore recusandae obcaecati in eligendi quis earum omnis
+                            repellat ab quod consectetur.</p>
+                    </ul>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- NUEVA SECCIÓN: PREGUNTAS FRECUENTES -->
+    <div class="container">
+        <section class="card" id="faq" style="margin-top:20px;">
+            <h2>Preguntas Frecuentes</h2>
+
+            <div class="faq-item">
+                <div class="faq-question">¿Qué pasa si se me desconecta durante un evento?</div>
+                <div class="faq-answer">Tienes que subir a Sala de Espera para poder presentar una prueba que avale el
+                    motivo por el cual se desconecto.</div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">¿Que pasa si no llega la cantidad de policías necesarios para una actividad
+                    diaria?</div>
+                <div class="faq-answer">Si llega a faltar la cantidad requerida de efectivos policiales, la tienda no
+                    sumara puntos.
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">¿Cuándo se actualiza el ranking?</div>
+                <div class="faq-answer">Los puntos se actualizan el dia siguiente.</div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">¿Como subo los puntos realizados por actividades diarias?</div>
+                <div class="faq-answer">Uno de los miembros tiene que subir un comprobante mediante ticket en donde se
+                    visualice que ganaron el rol.</div>
+            </div>
+
+        </section>
+    </div>
+
+
+    <!-- MODAL -->
+    <div id="bandModal" class="modal hidden">
+        <div class="modal-inner">
+            <button class="modal-close" id="modalClose">✕</button>
+            <div id="modalContent"></div>
+        </div>
+    </div>
+
+    <!-- FOOTER -->
+
+
+    <footer>
+        <div class="footer-content">
+            <img src="img/showinfinitorp.png" alt="ShowInfinitoRP" class="footer-logo">
+        </div>
+        <hr class="footer-line">
+        <p class="footer-copy">
+            © 2025 ShowInfinitoRP — 
+            <a href="https://www.linkedin.com/in/antony-woody-robles-gutierrez-31940b311/" target="_blank"
+                class="dev-link">Desarrollado por Ney</a>
+        </p>
+    </footer>
+
+
+
+
+    <!-- ✅ CARGA DE DATOS -->
+    <script src="data/data.js"></script>
+
+    <script>
+        const $ = s => document.querySelector(s);
+
+        document.addEventListener("DOMContentLoaded", () => {
+            bindUI();
+            computeTotals();
+            renderLeaderboard();
+
+            document.querySelectorAll('.week-header').forEach(header => {
+                header.addEventListener('click', () => {
+                    const target = document.getElementById(header.dataset.target);
+                    target.classList.toggle('hidden');
+                });
+            });
+        });
+
+        function bindUI() {
+            $("#modalClose").addEventListener("click", () => $("#bandModal").classList.add("hidden"));
+        }
+
+        /* ------------------------ CÁLCULOS ------------------------ */
+        function computeTotals() {
+            let totals = {};
+
+            DATA.bands.forEach(b => {
+                totals[b.id] = { id: b.id, name: b.name, logo: b.logo, color: b.color, events: 0, activities: 0, total: 0 };
+            });
+
+            DATA.events.forEach(ev => {
+                (ev.results || []).forEach(r => {
+                    totals[r.bandId].events += r.points;
+                    totals[r.bandId].total += r.points;
+                });
+            });
+
+            DATA.activities.forEach(a => {
+                if (a.verified !== false) {
+                    totals[a.bandId].activities += a.points;
+                    totals[a.bandId].total += a.points;
+                }
+            });
+
+            DATA._totals = Object.values(totals).sort((a, b) => b.total - a.total);
+            DATA._totals.forEach((t, i) => t.rank = i + 1);
+        }
+
+        // Activar los desplegables de preguntas frecuentes
+        document.querySelectorAll('.faq-question').forEach(q => {
+            q.addEventListener('click', () => {
+                const answer = q.nextElementSibling;
+                answer.classList.toggle('show');
+            });
+        });
+
+        /* ------------------------ LEADERBOARD ------------------------ */
+        function renderLeaderboard() {
+            const list = $("#leaderList");
+            list.innerHTML = "";
+
+            DATA._totals.forEach(t => {
+                const max1000 = Math.min(100, t.total / 1000 * 100);
+
+                const div = document.createElement("div");
+                div.className = "leader-item";
+                div.innerHTML = `
+          <div class="leader-rank">#${t.rank}</div>
+          <div class="leader-logo"><img src="${t.logo || ''}"></div>
+          <div class="leader-meta">
+            <h3>${t.name}</h3>
+            <small>${t.events} pts (eventos) • ${t.activities} pts (activ.)</small>
+            <div class="progress"><i style="width:${max1000}%"></i></div>
+          </div>
+          <div class="leader-points">${t.total} pts</div>
+        `;
+                div.addEventListener("click", () => openBand(t.id));
+                list.appendChild(div);
+            });
+        }
+
+        /* ------------------------ MODAL ------------------------ */
+        function openBand(id) {
+            const b = DATA.bands.find(x => x.id === id);
+            const t = DATA._totals.find(x => x.id === id);
+
+            let html = `<h2>${t.name}</h2>`;
+            html += `<p><strong>Total:</strong> ${t.total} pts</p>`;
+            html += `<h3>Eventos</h3>`;
+
+            DATA.events.forEach(ev => {
+                const r = ev.results.find(x => x.bandId === id);
+                html += `
+          <div style="padding:6px 0;border-bottom:1px solid rgba(255,255,255,0.05)">
+            ${ev.title} — ${r ? r.points + " pts  " : "Sin participación"}
+          </div>
+        `;
+            });
+
+            $("#modalContent").innerHTML = html;
+            $("#bandModal").classList.remove("hidden");
+        }
+    </script>
+
+</body>
+
+</html>
