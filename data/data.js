@@ -40,7 +40,7 @@ let DATA = {
         { "bandId": "b2", "position": 2, "points": 120 },
         { "bandId": "b3", "position": 3, "points": 0 },
         { "bandId": "b4", "position": 4, "points": 0 },
-        { "bandId": "b5", "position": 5, "points": 250 },
+        { "bandId": "b5", "position": 5, "points": 240 },
         { "bandId": "b6", "position": 6, "points": 180 },
         { "bandId": "b7", "position": 7, "points": 0 }
       ]
