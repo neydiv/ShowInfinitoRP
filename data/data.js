@@ -37,7 +37,7 @@ let DATA = {
       "date": "2025-11-07",
       "results": [
         { "bandId": "b1", "position": 1, "points": 0 },
-        { "bandId": "b2", "position": 2, "points": 0 },
+        { "bandId": "b2", "position": 2, "points": 120 },
         { "bandId": "b3", "position": 3, "points": 0 },
         { "bandId": "b4", "position": 4, "points": 0 },
         { "bandId": "b5", "position": 5, "points": 250 },

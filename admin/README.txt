@@ -15,3 +15,12 @@ Una vez modificado:
 1. Guarda el archivo data.js
 2. Sube los cambios a GitHub
 3. La web pública se actualiza automáticamente
+
+
+
+
+=== SUBIRLO A LA WEB ===
+
+git add .
+git commit -m "aquí pones que cambios agregaste"
+git push 
