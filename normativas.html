@@ -159,6 +159,59 @@
             color: #fff;
         }
 
+        /* ===== Normativas (solo afecta normativas.html) ===== */
+
+        .normativas {
+            width: 90%;
+            max-width: 900px;
+            margin: 50px auto;
+            color: #fff;
+        }
+
+        .accordion {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 8px;
+            margin-bottom: 12px;
+            overflow: hidden;
+            transition: background 0.3s;
+        }
+
+        .accordion:hover {
+            background: rgba(255, 255, 255, 0.08);
+        }
+
+        .accordion-header {
+            cursor: pointer;
+            padding: 12px 16px;
+            font-weight: 600;
+            font-size: 18px;
+            background: rgba(255, 255, 255, 0.05);
+            transition: background 0.3s, color 0.3s;
+        }
+
+        .accordion-header:hover {
+            background: rgba(255, 255, 255, 0.05);
+            color: #ffffff;
+        }
+
+        .accordion-content {
+            display: none;
+            padding: 14px 18px;
+            font-size: 15px;
+            line-height: 1.6;
+            background: rgba(0, 0, 0, 0.2);
+        }
+
+        .accordion.active .accordion-content {
+            display: block;
+        }
+
+        /* Listas dentro de acordeones */
+        .accordion-content ul {
+            margin-left: 20px;
+            list-style-type: disc;
+        }
+
         /* Icono de Discord */
         .discord-icon {
             width: 32px;
@@ -511,7 +564,7 @@
 
         <div class="header-right">
             <!-- 🧾 Botón Normativas -->
-            <a href="normativas.html" class="normativas-btn">Normativas</a>
+            <a href="index.html " class="normativas-btn">Inicio</a>
 
             <!-- 💬 Botón Discord -->
             <a href="https://discord.gg/showinfinito" target="_blank">
@@ -519,202 +572,113 @@
             </a>
         </div>
     </header>
+    <main>
+        <section class="normativas">
+            <h1 style="text-align:center; margin: 30px 0;">Normativas de Actividades Diarias</h1>
 
-
-
-
-
-
-
-
-    <div class="container main-grid">
-
-        <!-- LEADERBOARD -->
-        <section class="card">
-            <h2 style="text-align: center;">Ranking General</h2>
-            <div id="leaderList" class="leader-list"></div>
-        </section>
-
-        <!-- SISTEMA DE PUNTOS -->
-        <section class="card">
-            <h2 style="text-align: center;">Sistema de Puntos</h2>
-
-            <h3 style="margin-top:15px">Eventos Semanales</h3>
-            <div class="event-row">
-                <strong>1er Lugar</strong>
-                <span>250 pts</span>
-            </div>
-            <div class="event-row">
-                <strong>2do Lugar</strong>
-                <span>180 pts</span>
-            </div>
-            <div class="event-row">
-                <strong>3er Lugar</strong>
-                <span>120 pts</span>
-            </div>
-
-            <h3 style="margin-top:20px;">Actividades Diarias</h3>
-
-            <div class="event-row">
-                <div>
-                    <strong>Banco Central</strong><br>
-                    <small>1 cada 2 días</small>
+            <div class="accordion">
+                <div class="accordion-header">Normativa de Actividades Diarias</div>
+                <div class="accordion-content">
+                    <p><strong>Tienda:</strong> 2 a 3 policías<br>
+                        <strong>Ammunation:</strong> 3 a 4 policías<br>
+                        <strong>Joyería:</strong> 4 a 5 policías<br>
+                        <strong>Banco Central:</strong> 6 a 8 policías
+                    </p>
                 </div>
-                <span>85 pts</span>
             </div>
 
-            <div class="event-row">
-                <div>
-                    <strong>Joyería</strong><br>
-                    <small>1 por día</small>
-                </div>
-                <span>50 pts</span>
-            </div>
-
-            <div class="event-row">
-                <div>
-                    <strong>Ammu-Nation</strong><br>
-                    <small>2 por día</small>
-                </div>
-                <span>20 pts</span>
-            </div>
-
-            <div class="event-row">
-                <div>
-                    <strong>Tienda</strong><br>
-                    <small>4 por día</small>
-                </div>
-                <span>10 pts</span>
-            </div>
-
-        </section>
-    </div>
-
-    <!-- SECCIÓN DETALLES DE SEMANA -->
-    <div class="container">
-        <section class="card" id="weekDetails" style="margin-top:20px;">
-            <h2 style="text-align: center;">Eventos</h2>
-            <div id="weekContent" style="margin-top:10px; line-height:1.6; color:#c5cdd8;">
-                <div class="week-block">
-                    <div class="week-header" data-target="week1"> <strong>SEMANA 1</strong></div>
-                    <ul id="week1" class="week-list hidden">
-                        <li>1. Cargamento Letal</li>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil cupiditate voluptatibus, magni
-                            natus reiciendis, enim eius id veritatis quas ratione harum voluptates atque dolorum optio
-                            at? Rerum a, mollitia omnis facere nihil soluta doloribus! Inventore, autem? Repudiandae,
-                            quae cupiditate! Dicta esse in animi neque accusantium, est, aperiam ab eos perspiciatis
-                            alias accusamus libero. Doloremque, accusamus. Veritatis quae sed esse hic fuga aut suscipit
-                            illo totam, mollitia nostrum sint quia quidem praesentium necessitatibus beatae ut voluptate
-                            doloribus odit exercitationem porro, aliquam tempora. Consectetur tenetur, esse, cupiditate
-                            eligendi vitae voluptatibus magni quibusdam aspernatur, cum aperiam dignissimos alias nisi
-                            voluptates commodi laboriosam quos.</p>
-                        <li>2. Interceptar el Convoy</li>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam, eum a cupiditate dolorem
-                            minus libero delectus ratione excepturi voluptatibus soluta autem, atque nisi maxime earum,
-                            iusto tempora assumenda repellat inventore? Sint nesciunt porro eum aliquam optio, quia
-                            tenetur laborum ducimus nostrum quasi accusantium sit culpa, aut incidunt molestiae modi
-                            voluptates eaque id ab delectus repellendus impedit! Aliquam, sed omnis odit a illo
-                            quibusdam ullam porro similique iusto sapiente nemo quis asperiores magni voluptatem
-                            quisquam. Ab quisquam debitis sint sed velit quam dignissimos possimus, dolorum beatae ipsam
-                            mollitia, repellendus animi ad reiciendis aliquid! Quis, laudantium amet aspernatur placeat
-                            soluta officia repudiandae?</p>
+            <div class="accordion">
+                <div class="accordion-header">Cantidad de participantes por banda</div>
+                <div class="accordion-content">
+                    <p>Para mantener el equilibrio en cada actividad diaria, cada banda tendrá un límite claro de
+                        participantes:</p>
+                    <ul>
+                        <li>Tienda: máximo 3 integrantes</li>
+                        <li>Ammunation: máximo 4 integrantes</li>
+                        <li>Joyería: máximo 5 integrantes</li>
+                        <li>Banco Central: máximo 6 integrantes</li>
                     </ul>
+                    <p>Si una banda excede el límite o cambia la cantidad durante el rol, la actividad quedará anulada y
+                        no sumará puntos.</p>
                 </div>
-                <div class="week-block">
-                    <div class="week-header" data-target="week2"> <strong>SEMANA 2</strong></div>
-                    <ul id="week2" class="week-list hidden">
-                        <li>1. Dominio de Pollos</li>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam, modi officia quae reiciendis
-                            eos libero itaque placeat voluptatum, dolorum deleniti quo consequatur quod iste? Harum,
-                            ipsa? Modi, placeat? Ducimus laborum quas commodi veritatis quisquam asperiores tempora
-                            adipisci placeat sequi, aut suscipit ullam enim deleniti sint, minus, ipsum reprehenderit
-                            cumque rem? Doloremque ratione incidunt nesciunt at delectus eligendi, cupiditate officia
-                            tenetur laboriosam id aspernatur expedita est amet quod eius. Hic earum culpa quidem eum
-                            voluptatibus dicta at itaque, officiis voluptate aspernatur. Quisquam eius magnam unde,
-                            eveniet dicta debitis. Eveniet, iusto eum eligendi earum accusantium dicta ducimus neque
-                            dolores nemo quia ab.</p>
-                        <li>2. Código Rojo: Humane</li>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eos asperiores ea id aut nihil, ad
-                            excepturi eligendi animi iste! Deleniti iste dolor recusandae at possimus quaerat, nesciunt
-                            mollitia qui, maiores corporis facere minima laudantium magni sapiente! Cupiditate harum
-                            voluptate et repellendus odio, exercitationem doloribus, explicabo saepe rerum fugiat,
-                            laudantium optio esse. Autem fugit laborum molestias ad nesciunt beatae ut est nulla tempore
-                            quidem alias, animi fugiat debitis enim iure odio omnis, ullam aut molestiae incidunt
-                            reiciendis commodi tempora dolor! Vel, esse vero doloribus illum pariatur dolore voluptate
-                            quod, delectus accusantium id aspernatur? Non architecto autem, voluptate harum iste
-                            reprehenderit qui.</p>
-                    </ul>
+            </div>
+
+            <div class="accordion">
+                <div class="accordion-header">Aviso previo para Joyería y Banco Central</div>
+                <div class="accordion-content">
+                    <p>Estas actividades se harán con previo aviso mediante el canal de Solicitudes, para permitir que
+                        la policía se organice y garantizar un enfrentamiento justo.</p>
                 </div>
-                <div class="week-block">
-                    <div class="week-header" data-target="week3"> <strong>SEMANA 3</strong></div>
-                    <ul id="week3" class="week-list hidden">
-                        <li>1. Evento 1</li>
-                        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Delectus incidunt beatae, tempore
-                            eaque, facilis exercitationem placeat culpa officia dolor ipsa, numquam vero dolores
-                            praesentium eveniet impedit adipisci ipsam hic commodi. Quae delectus quasi placeat, vel
-                            nobis excepturi exercitationem natus enim saepe sint incidunt! Enim quam sit quo vitae harum
-                            alias, eius placeat est dolore, dolorem itaque recusandae natus in debitis pariatur laborum
-                            provident rerum neque sapiente incidunt suscipit molestiae quidem. Optio animi obcaecati
-                            consequatur saepe sunt, magnam quae corporis impedit itaque dolores atque quam voluptatum!
-                            Inventore blanditiis nisi harum pariatur voluptas quisquam. Quod esse magnam deleniti non
-                            odit, excepturi quae!</p>
-                        <li>2. Evento 2</li>
-                        <p> Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque obcaecati ducimus
-                            necessitatibus! Libero laudantium iusto, voluptas numquam, veniam aliquid reiciendis
-                            reprehenderit voluptate facilis deleniti itaque ipsa ex a enim, deserunt provident rerum
-                            debitis temporibus porro quo dicta velit? Veritatis repellat tenetur inventore temporibus
-                            corrupti mollitia ducimus cum sed, quod dicta, officia eum earum libero ex quam omnis eaque.
-                            Tenetur possimus doloremque aut minus excepturi ipsum optio distinctio enim labore deserunt
-                            fuga reprehenderit, ipsa officia dicta omnis est eos suscipit libero laudantium! At, vero
-                            qui eos corporis veniam consequatur labore recusandae obcaecati in eligendi quis earum omnis
-                            repellat ab quod consectetur.</p>
+            </div>
+
+            <div class="accordion">
+                <div class="accordion-header">Reglas y Prohibiciones (Antes, Durante y Después del rol)</div>
+                <div class="accordion-content">
+                    <ul>
+                        <li>Prohibido retrasar el inicio del rol o integrar personas de último momento.</li>
+                        <li>Es obligatorio enviar entorno antes de iniciar cualquier actividad.</li>
+                        <li>Todos los miembros deben usar la ropa o colores de su banda.</li>
+                        <li>Prohibido bloquear accesos con vehículos o usar /autoems durante el rol.</li>
+                        <li>No se permite desconectarse o insultar OOC.</li>
+                        <li>Prohibido interferencias externas (civiles o bandas no involucradas).</li>
                     </ul>
                 </div>
             </div>
-        </section>
-    </div>
 
-    <!-- NUEVA SECCIÓN: PREGUNTAS FRECUENTES -->
-    <div class="container">
-        <section class="card" id="faq" style="margin-top:20px;">
-            <h2>Preguntas Frecuentes</h2>
-
-            <div class="faq-item">
-                <div class="faq-question">¿Qué pasa si se me desconecta durante un evento?</div>
-                <div class="faq-answer">Tienes que subir a Sala de Espera para poder presentar una prueba que avale el
-                    motivo por el cual se desconecto.</div>
-            </div>
-
-            <div class="faq-item">
-                <div class="faq-question">¿Que pasa si no llega la cantidad de policías necesarios para una actividad
-                    diaria?</div>
-                <div class="faq-answer">Si llega a faltar la cantidad requerida de efectivos policiales, la tienda no
-                    sumara puntos.
+            <div class="accordion">
+                <div class="accordion-header">Reporte de irregularidades policiales</div>
+                <div class="accordion-content">
+                    <p>Si una banda detecta irregularidades por parte de la policía, debe finalizar el rol con
+                        normalidad, reunir un clip claro y abrir ticket en Discord con los detalles.</p>
                 </div>
             </div>
 
-            <div class="faq-item">
-                <div class="faq-question">¿Cuándo se actualiza el ranking?</div>
-                <div class="faq-answer">Los puntos se actualizan el dia siguiente.</div>
+            <div class="accordion">
+                <div class="accordion-header">Validación de puntos</div>
+                <div class="accordion-content">
+                    <p>La validación de puntos solo se realiza si la banda gana el rol y publica evidencia (clip o foto)
+                        en su canal de evidencias.</p>
+                </div>
             </div>
 
-            <div class="faq-item">
-                <div class="faq-question">¿Como subo los puntos realizados por actividades diarias?</div>
-                <div class="faq-answer">Uno de los miembros tiene que subir un comprobante mediante ticket en donde se
-                    visualice que ganaron el rol.</div>
+            <div class="accordion">
+                <div class="accordion-header">Control y transparencia del puntaje</div>
+                <div class="accordion-content">
+                    <p>Este sistema garantiza un control transparente y justo de los puntos obtenidos, con registro
+                        verificable en cada evidencia publicada.</p>
+                </div>
             </div>
 
+            <div class="accordion">
+                <div class="accordion-header">Tiempos de cárcel (si la policía gana)</div>
+                <div class="accordion-content">
+                    <ul>
+                        <li>Tienda: 5 – 10 minutos</li>
+                        <li>Ammunation: 10 – 20 minutos</li>
+                        <li>Joyería: 20 – 40 minutos</li>
+                        <li>Banco Central: 30 – 60 minutos</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="accordion">
+                <div class="accordion-header">Uso indebido de comandos de banda</div>
+                <div class="accordion-content">
+                    <p>Se considera uso indebido cuando se usan comandos como bolsa, esposas u obstrucción para obtener
+                        ventaja o retrasar el rol. Esto puede causar aumento de cárcel o pérdida de puntos.</p>
+                </div>
+            </div>
+
+            <div class="accordion">
+                <div class="accordion-header">Objetivo general</div>
+                <div class="accordion-content">
+                    <p>Estas normas buscan mantener una competencia sana, regulada y transparente, asegurando que cada
+                        rol sea justo, divertido y equilibrado.</p>
+                </div>
+            </div>
         </section>
-    </div>
+    </main>
 
-
-    <!-- MODAL -->
-    <div id="bandModal" class="modal hidden">
-        <div class="modal-inner">
-            <button class="modal-close" id="modalClose">✕</button>
-            <div id="modalContent"></div>
-        </div>
-    </div>
 
     <!-- FOOTER -->
 
@@ -736,6 +700,15 @@
 
     <!-- ✅ CARGA DE DATOS -->
     <script src="data/data.js"></script>
+
+    <script>
+        document.querySelectorAll('.accordion-header').forEach(header => {
+            header.addEventListener('click', () => {
+                header.parentElement.classList.toggle('active');
+            });
+        });
+    </script>
+
 
     <script>
         const $ = s => document.querySelector(s);
