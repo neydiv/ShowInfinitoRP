@@ -97,7 +97,7 @@ let DATA = {
     {
       "id": "w2e2",
       "week": 2,
-      "title": "Evento 2",
+      "title": "Código Rojo: Humane",
       "date": "2025-11-19",
       "results": [
         { "bandId": "b1", "position": 1, "points": 0 },
@@ -114,7 +114,7 @@ let DATA = {
     {
       "id": "w3e1",
       "week": 3,
-      "title": "Evento 1",
+      "title": "La Zona de Cascos",
       "date": "2025-11-24",
       "results": [
         { "bandId": "b1", "position": 1, "points": 0 },
@@ -129,7 +129,7 @@ let DATA = {
     {
       "id": "w3e2",
       "week": 3,
-      "title": "Evento 2",
+      "title": "PROXIMAMENTE",
       "date": "2025-11-26",
       "results": [
         { "bandId": "b1", "position": 1, "points": 0 },
