@@ -164,7 +164,7 @@ let DATA = {
     { "bandId": "b3", "name": "Joyería", "points": 0 },
     { "bandId": "b4", "name": "Joyería", "points": 0 },
     { "bandId": "b5", "name": "Joyería", "points": 0 },
-    { "bandId": "b6", "name": "Joyería", "points": 0 },
+    { "bandId": "b6", "name": "Joyería", "points": 50 },
     { "bandId": "b7", "name": "Joyería", "points": 0 },
 
     // 🔫 Ammu-Nation
@@ -182,7 +182,7 @@ let DATA = {
     { "bandId": "b3", "name": "Tienda", "points": 0 },
     { "bandId": "b4", "name": "Tienda", "points": 0 },
     { "bandId": "b5", "name": "Tienda", "points": 10 },
-    { "bandId": "b6", "name": "Tienda", "points": 10 },
+    { "bandId": "b6", "name": "Tienda", "points": 30 },
     { "bandId": "b7", "name": "Tienda", "points": 0 }
   ]
 };
