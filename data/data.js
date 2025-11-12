@@ -18,7 +18,8 @@ let DATA = {
   { "id": "b4", "name": "Los Malditos del Sur Chico", "color": "#f1c40f", "logo": "img/amarillo.png" },
   { "id": "b5", "name": "Al Qaeda", "color": "#ffffffff", "logo": "img/blanco.png" },
   { "id": "b6", "name": "La Gran Sangre", "color": "#992d22", "logo": "img/rojo.png" },
-  { "id": "b7", "name": "Los Injerto", "color": "#0019ff", "logo": "img/azul.png" }
+  { "id": "b7", "name": "Los Injerto", "color": "#0019ff", "logo": "img/azul.png" },
+  { "id": "b8", "name": "Pulpos Lma", "color": "#ff0000", "logo": "" }
 ],
 
 
@@ -42,7 +43,8 @@ let DATA = {
         { "bandId": "b4", "position": 4, "points": 0 },
         { "bandId": "b5", "position": 5, "points": 250 },
         { "bandId": "b6", "position": 6, "points": 180 },
-        { "bandId": "b7", "position": 7, "points": 0 }
+        { "bandId": "b7", "position": 7, "points": 0 },
+        { "bandId": "b8", "position": 8, "points": 0 }
       ]
     },
 
@@ -59,7 +61,8 @@ let DATA = {
         { "bandId": "b4", "position": 4, "points": 0 },
         { "bandId": "b5", "position": 5, "points": 0 },
         { "bandId": "b6", "position": 6, "points": 0 },
-        { "bandId": "b7", "position": 7, "points": 0 }
+        { "bandId": "b7", "position": 7, "points": 0 },
+        { "bandId": "b8", "position": 8, "points": 0 }
       ]
     },
     {
@@ -74,7 +77,8 @@ let DATA = {
         { "bandId": "b4", "position": 4, "points": 0 },
         { "bandId": "b5", "position": 5, "points": 0 },
         { "bandId": "b6", "position": 6, "points": 0 },
-        { "bandId": "b7", "position": 7, "points": 0 }
+        { "bandId": "b7", "position": 7, "points": 0 },
+        { "bandId": "b8", "position": 8, "points": 0 }
       ]
     },
 
@@ -91,7 +95,8 @@ let DATA = {
         { "bandId": "b4", "position": 4, "points": 0 },
         { "bandId": "b5", "position": 5, "points": 0 },
         { "bandId": "b6", "position": 6, "points": 0 },
-        { "bandId": "b7", "position": 7, "points": 0 }
+        { "bandId": "b7", "position": 7, "points": 0 },
+        { "bandId": "b8", "position": 8, "points": 0 }
       ]
     },
     {
@@ -106,7 +111,8 @@ let DATA = {
         { "bandId": "b4", "position": 4, "points": 0 },
         { "bandId": "b5", "position": 5, "points": 0 },
         { "bandId": "b6", "position": 6, "points": 0 },
-        { "bandId": "b7", "position": 7, "points": 0 }
+        { "bandId": "b7", "position": 7, "points": 0 },
+        { "bandId": "b8", "position": 8, "points": 0 }
       ]
     },
 
@@ -123,7 +129,8 @@ let DATA = {
         { "bandId": "b4", "position": 4, "points": 0 },
         { "bandId": "b5", "position": 5, "points": 0 },
         { "bandId": "b6", "position": 6, "points": 0 },
-        { "bandId": "b7", "position": 7, "points": 0 }
+        { "bandId": "b7", "position": 7, "points": 0 },
+        { "bandId": "b8", "position": 8, "points": 0 }
       ]
     },
     {
@@ -138,7 +145,8 @@ let DATA = {
         { "bandId": "b4", "position": 4, "points": 0 },
         { "bandId": "b5", "position": 5, "points": 0 },
         { "bandId": "b6", "position": 6, "points": 0 },
-        { "bandId": "b7", "position": 7, "points": 0 }
+        { "bandId": "b7", "position": 7, "points": 0 },
+        { "bandId": "b8", "position": 8, "points": 0 }
       ]
     }
   ],
@@ -157,6 +165,7 @@ let DATA = {
     { "bandId": "b5", "name": "Banco Central", "points": 0 },
     { "bandId": "b6", "name": "Banco Central", "points": 0 },
     { "bandId": "b7", "name": "Banco Central", "points": 0 },
+    { "bandId": "b8", "name": "Banco Central", "points": 0 },
 
     // 💎 Joyería
     { "bandId": "b1", "name": "Joyería", "points": 0 },
@@ -166,6 +175,7 @@ let DATA = {
     { "bandId": "b5", "name": "Joyería", "points": 0 },
     { "bandId": "b6", "name": "Joyería", "points": 50 },
     { "bandId": "b7", "name": "Joyería", "points": 0 },
+    { "bandId": "b8", "name": "Joyería", "points": 0 },
 
     // 🔫 Ammu-Nation
     { "bandId": "b1", "name": "Ammu-Nation", "points": 20 },
@@ -175,6 +185,7 @@ let DATA = {
     { "bandId": "b5", "name": "Ammu-Nation", "points": 0 },
     { "bandId": "b6", "name": "Ammu-Nation", "points": 0 },
     { "bandId": "b7", "name": "Ammu-Nation", "points": 0 },
+    { "bandId": "b8", "name": "Ammu-Nation", "points": 0 },
 
     // 🏪 Tienda
     { "bandId": "b1", "name": "Tienda", "points": 20 },
@@ -183,6 +194,7 @@ let DATA = {
     { "bandId": "b4", "name": "Tienda", "points": 0 },
     { "bandId": "b5", "name": "Tienda", "points": 10 },
     { "bandId": "b6", "name": "Tienda", "points": 30 },
-    { "bandId": "b7", "name": "Tienda", "points": 0 }
+    { "bandId": "b7", "name": "Tienda", "points": 0 },
+    { "bandId": "b8", "name": "Tienda", "points": 0 }
   ]
 };
