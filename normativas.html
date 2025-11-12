@@ -534,6 +534,30 @@
             text-shadow: 0 0 6px #00ff7f;
         }
 
+
+
+        /* ==== ANIMACIONES DE ENTRADA SUAVES ==== */
+        .fade-section {
+            opacity: 0;
+            transform: translateY(40px);
+            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+        }
+
+        .fade-section.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Scroll más suave en general */
+        html {
+            scroll-behavior: smooth;
+        }
+
+
+
+
+
+
         /* ==== CURSOR PERSONALIZADO ==== */
         /* Cursor personalizado */
         .custom-cursor {
@@ -562,7 +586,16 @@
             box-shadow: 0 0 25px rgba(220, 0, 255, 0.9);
         }
 
+        .fade-section {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.8s ease, transform 0.8s ease;
+        }
 
+        .fade-section.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
 
 
 
@@ -601,7 +634,8 @@
             </a>
         </div>
     </header>
-    <main>
+    <main class="normativas fade-section">
+
         <section class="normativas">
             <h1 style="text-align:center; margin: 30px 0;">Normativas de Actividades Diarias</h1>
 
@@ -708,6 +742,15 @@
         </section>
     </main>
 
+    <!-- MODAL -->
+    <div id="bandModal" class="modal hidden">
+        <div class="modal-inner">
+            <button class="modal-close" id="modalClose">✕</button>
+            <div id="modalContent"></div>
+        </div>
+    </div>
+
+
 
     <!-- FOOTER -->
 
@@ -718,7 +761,7 @@
         </div>
         <hr class="footer-line">
         <p class="footer-copy">
-            © 2025 ShowInfinitoRP —
+            ©2025 ShowInfinitoRP —
             <a href="https://www.linkedin.com/in/antony-woody-robles-gutierrez-31940b311/" target="_blank"
                 class="dev-link">Desarrollado por Ney</a>
         </p>
@@ -726,7 +769,12 @@
 
     <div class="cursor"></div>
 
-
+    <script>
+        window.addEventListener("DOMContentLoaded", () => {
+            const section = document.querySelector(".fade-section");
+            requestAnimationFrame(() => section.classList.add("visible"));
+        });
+    </script>
 
     <!-- ✅ CARGA DE DATOS -->
     <script src="data/data.js"></script>
@@ -858,6 +906,33 @@
             $("#modalContent").innerHTML = html;
             $("#bandModal").classList.remove("hidden");
         }
+
+        // Detectar elementos que se van mostrando al hacer scroll
+        document.addEventListener("DOMContentLoaded", () => {
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add("visible");
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.15 });
+
+            // Selecciona las secciones que quieres animar
+            document.querySelectorAll("section.card, .container").forEach(sec => {
+                sec.classList.add("fade-section");
+                observer.observe(sec);
+            });
+        });
+
+
+
+
+
+
+
+
+
     </script>
 
 </body>
