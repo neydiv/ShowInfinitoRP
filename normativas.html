@@ -534,6 +534,35 @@
             text-shadow: 0 0 6px #00ff7f;
         }
 
+        /* ==== CURSOR PERSONALIZADO ==== */
+        /* Cursor personalizado */
+        .custom-cursor {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 40px;
+            height: 40px;
+            background: #9721c5;
+            border-radius: 50%;
+            pointer-events: none;
+            transform: translate(-50%, -50%);
+            transition: transform 0.05s ease-out, opacity 0.4s ease;
+            z-index: 9999;
+            mix-blend-mode: difference;
+            /* opcional: se ve mejor en fondos claros/oscuros */
+
+        }
+
+        /* Cuando se pasa sobre enlaces o botones */
+        a:hover~.custom-cursor,
+        button:hover~.custom-cursor {
+            width: 40px;
+            height: 40px;
+            background: rgba(220, 0, 255, 0.8);
+            box-shadow: 0 0 25px rgba(220, 0, 255, 0.9);
+        }
+
+
 
 
 
@@ -695,6 +724,7 @@
         </p>
     </footer>
 
+    <div class="cursor"></div>
 
 
 
@@ -708,6 +738,24 @@
             });
         });
     </script>
+
+    <!-- Cursor personalizado -->
+    <script>
+        const cursor = document.createElement("div");
+        cursor.classList.add("custom-cursor");
+        cursor.style.opacity = "0"; // 🔹 Oculto por defecto
+        document.body.appendChild(cursor);
+
+        document.addEventListener("mousemove", (e) => {
+            const x = e.clientX;
+            const y = e.clientY;
+            cursor.style.transform = `translate(${x}px, ${y}px) translate(-50%, -50%)`;
+            cursor.style.opacity = "1"; // 🔹 Solo visible cuando el mouse se mueve
+        });
+
+        document.addEventListener("mouseleave", () => cursor.style.opacity = "0");
+    </script>
+
 
 
     <script>
