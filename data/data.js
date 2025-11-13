@@ -172,7 +172,7 @@ let DATA = {
     { "bandId": "b2", "name": "Joyería", "points": 0 },
     { "bandId": "b3", "name": "Joyería", "points": 0 },
     { "bandId": "b4", "name": "Joyería", "points": 0 },
-    { "bandId": "b5", "name": "Joyería", "points": 0 },
+    { "bandId": "b5", "name": "Joyería", "points": 50 },
     { "bandId": "b6", "name": "Joyería", "points": 50 },
     { "bandId": "b7", "name": "Joyería", "points": 0 },
     { "bandId": "b8", "name": "Joyería", "points": 0 },
@@ -192,7 +192,7 @@ let DATA = {
     { "bandId": "b2", "name": "Tienda", "points": 0 },
     { "bandId": "b3", "name": "Tienda", "points": 0 },
     { "bandId": "b4", "name": "Tienda", "points": 0 },
-    { "bandId": "b5", "name": "Tienda", "points": 10 },
+    { "bandId": "b5", "name": "Tienda", "points": 20 },
     { "bandId": "b6", "name": "Tienda", "points": 30 },
     { "bandId": "b7", "name": "Tienda", "points": 0 },
     { "bandId": "b8", "name": "Tienda", "points": 0 }
