@@ -19,7 +19,7 @@ let DATA = {
   { "id": "b5", "name": "Al Qaeda", "color": "#ffffffff", "logo": "img/blanco.png" },
   { "id": "b6", "name": "La Gran Sangre", "color": "#992d22", "logo": "img/rojo.png" },
   { "id": "b7", "name": "Los Injerto", "color": "#0019ff", "logo": "img/azul.png" },
-  { "id": "b8", "name": "Pulpos Lma", "color": "#ff0000", "logo": "" }
+  { "id": "b8", "name": "Pulpos Lma", "color": "#ff0000", "logo": "img/rojonegro.png" }
 ],
 
 
