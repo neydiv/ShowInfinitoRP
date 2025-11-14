@@ -162,7 +162,7 @@ let DATA = {
     { "bandId": "b2", "name": "Banco Central", "points": 0 },
     { "bandId": "b3", "name": "Banco Central", "points": 0},
     { "bandId": "b4", "name": "Banco Central", "points": 0 },
-    { "bandId": "b5", "name": "Banco Central", "points": 0 },
+    { "bandId": "b5", "name": "Banco Central", "points": 85 },
     { "bandId": "b6", "name": "Banco Central", "points": 0 },
     { "bandId": "b7", "name": "Banco Central", "points": 0 },
     { "bandId": "b8", "name": "Banco Central", "points": 0 },
@@ -173,12 +173,12 @@ let DATA = {
     { "bandId": "b3", "name": "Joyería", "points": 0 },
     { "bandId": "b4", "name": "Joyería", "points": 0 },
     { "bandId": "b5", "name": "Joyería", "points": 50 },
-    { "bandId": "b6", "name": "Joyería", "points": 50 },
+    { "bandId": "b6", "name": "Joyería", "points": 110 },
     { "bandId": "b7", "name": "Joyería", "points": 0 },
     { "bandId": "b8", "name": "Joyería", "points": 0 },
 
     // 🔫 Ammu-Nation
-    { "bandId": "b1", "name": "Ammu-Nation", "points": 40 },
+    { "bandId": "b1", "name": "Ammu-Nation", "points": 60 },
     { "bandId": "b2", "name": "Ammu-Nation", "points": 0 },
     { "bandId": "b3", "name": "Ammu-Nation", "points": 0 },
     { "bandId": "b4", "name": "Ammu-Nation", "points": 0 },
@@ -193,7 +193,7 @@ let DATA = {
     { "bandId": "b3", "name": "Tienda", "points": 0 },
     { "bandId": "b4", "name": "Tienda", "points": 0 },
     { "bandId": "b5", "name": "Tienda", "points": 20 },
-    { "bandId": "b6", "name": "Tienda", "points": 30 },
+    { "bandId": "b6", "name": "Tienda", "points": 70 },
     { "bandId": "b7", "name": "Tienda", "points": 0 },
     { "bandId": "b8", "name": "Tienda", "points": 0 }
   ]
