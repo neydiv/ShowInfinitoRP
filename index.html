@@ -8,6 +8,69 @@
     <link rel="icon" href="img/showinfinitorp.png">
 
     <style>
+        #bgParticles {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            /* se mantiene detrás de todo */
+            pointer-events: none;
+            background: #0b0f17;
+            /* color base elegante */
+        }
+
+
+        .modal {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.55);
+            backdrop-filter: blur(4px);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 999;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity .35s ease;
+        }
+
+        .modal.show {
+            opacity: 1 !important;
+            pointer-events: auto;
+        }
+
+        .modal-inner {
+            background: #111827;
+            padding: 25px;
+            border-radius: 12px;
+            width: 480px;
+            max-width: 90%;
+            color: #fff;
+            transform: scale(.8);
+            transition: transform .35s ease;
+            position: relative;
+        }
+
+        .modal.show .modal-inner {
+            transform: scale(1);
+        }
+
+        .modal-close {
+            position: absolute;
+            top: 12px;
+            right: 14px;
+            background: none;
+            border: none;
+            color: #fff;
+            font-size: 22px;
+            cursor: pointer;
+        }
+
         /* ---------- ESTILOS CSS ---------- */
         :root {
             --bg: #0b0f14;
@@ -542,6 +605,8 @@
 </head>
 
 <body>
+    <canvas id="bgParticles"></canvas>
+
 
     <header>
         <div class="header-left">
@@ -941,6 +1006,110 @@
 
 
     </script>
+
+
+    <script>
+
+        /* ========================================================= */
+        /* ===================== OPEN MODAL ======================== */
+        /* ========================================================= */
+        function openModal(html) {
+            const modal = document.getElementById("bandModal");
+            const content = document.getElementById("modalContent");
+
+            content.innerHTML = html;
+
+            modal.classList.remove("hidden");
+
+            // Reset animation
+            modal.classList.remove("show");
+            void modal.offsetWidth;
+            modal.classList.add("show");
+        }
+
+        document.getElementById("modalClose").addEventListener("click", () => {
+            const modal = document.getElementById("bandModal");
+            modal.classList.remove("show");
+
+            setTimeout(() => modal.classList.add("hidden"), 300);
+        });
+
+        /* ========================================================= */
+        /* ==================== OPEN BAND ========================== */
+        /* ========================================================= */
+
+        function openBand(id) {
+            const t = DATA._totals.find(x => x.id === id);
+
+            let html = `
+                <h2>${t.name}</h2>
+                <p><strong>Total:</strong> ${t.total} pts</p>
+
+                <h3>Eventos</h3>
+            `;
+
+            DATA.events.forEach(ev => {
+                const r = ev.results.find(x => x.bandId === id);
+
+                html += `
+                    <div style="padding:6px 0;border-bottom:1px solid rgba(255,255,255,0.08)">
+                        ${ev.title} — ${r ? r.points + " pts" : "Sin participación"}
+                    </div>
+                `;
+            });
+
+            openModal(html);
+        }
+
+    </script>
+
+    <script>
+        const canvas = document.getElementById("bgParticles");
+        const ctx = canvas.getContext("2d");
+
+        function resize() {
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+        }
+        resize();
+        window.addEventListener("resize", resize);
+
+        const particles = [];
+        const PARTICLE_COUNT = 70;
+        const COLOR = "rgba(140, 0, 255, 0.7)"; // 💜 morado neón
+
+        for (let i = 0; i < PARTICLE_COUNT; i++) {
+            particles.push({
+                x: Math.random() * canvas.width,
+                y: Math.random() * canvas.height,
+                r: Math.random() * 3 + 1,
+                vx: (Math.random() - 0.5) * 0.6,
+                vy: (Math.random() - 0.5) * 0.6
+            });
+        }
+
+        function draw() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+            for (let p of particles) {
+                ctx.beginPath();
+                ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
+                ctx.fillStyle = COLOR;
+                ctx.fill();
+
+                p.x += p.vx;
+                p.y += p.vy;
+
+                if (p.x < 0 || p.x > canvas.width) p.vx *= -1;
+                if (p.y < 0 || p.y > canvas.height) p.vy *= -1;
+            }
+
+            requestAnimationFrame(draw);
+        }
+
+        draw();
+    </script>
+
 
 </body>
 

@@ -9,6 +9,23 @@
 
     <style>
         /* ---------- ESTILOS CSS ---------- */
+
+        #bgParticles {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            /* se mantiene detrás de todo */
+            pointer-events: none;
+            background: #0b0f17;
+            /* color base elegante */
+        }
+
+
+
+
         :root {
             --bg: #0b0f14;
             --card: #0f1720;
@@ -610,6 +627,8 @@
 </head>
 
 <body>
+    <canvas id="bgParticles"></canvas>
+
 
     <header>
         <div class="header-left">
@@ -934,6 +953,54 @@
 
 
     </script>
+
+    <script>
+        const canvas = document.getElementById("bgParticles");
+        const ctx = canvas.getContext("2d");
+
+        function resize() {
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+        }
+        resize();
+        window.addEventListener("resize", resize);
+
+        const particles = [];
+        const PARTICLE_COUNT = 70;
+        const COLOR = "rgba(140, 0, 255, 0.7)"; // 💜 morado neón
+
+        for (let i = 0; i < PARTICLE_COUNT; i++) {
+            particles.push({
+                x: Math.random() * canvas.width,
+                y: Math.random() * canvas.height,
+                r: Math.random() * 3 + 1,
+                vx: (Math.random() - 0.5) * 0.6,
+                vy: (Math.random() - 0.5) * 0.6
+            });
+        }
+
+        function draw() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+            for (let p of particles) {
+                ctx.beginPath();
+                ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
+                ctx.fillStyle = COLOR;
+                ctx.fill();
+
+                p.x += p.vx;
+                p.y += p.vy;
+
+                if (p.x < 0 || p.x > canvas.width) p.vx *= -1;
+                if (p.y < 0 || p.y > canvas.height) p.vy *= -1;
+            }
+
+            requestAnimationFrame(draw);
+        }
+
+        draw();
+    </script>
+
 
 </body>
 
