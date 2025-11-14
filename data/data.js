@@ -168,7 +168,7 @@ let DATA = {
     { "bandId": "b8", "name": "Banco Central", "points": 0 },
 
     // 💎 Joyería
-    { "bandId": "b1", "name": "Joyería", "points": 0 },
+    { "bandId": "b1", "name": "Joyería", "points": 50 },
     { "bandId": "b2", "name": "Joyería", "points": 0 },
     { "bandId": "b3", "name": "Joyería", "points": 0 },
     { "bandId": "b4", "name": "Joyería", "points": 0 },
