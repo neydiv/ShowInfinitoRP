@@ -112,7 +112,7 @@ let DATA = {
         { "bandId": "b5", "position": 5, "points": 0 },
         { "bandId": "b6", "position": 6, "points": 0 },
         { "bandId": "b7", "position": 7, "points": 0 },
-        { " bandId": "b8", "position": 8, "points": 0 }
+        { "bandId": "b8", "position": 8, "points": 0 }
       ]
     },
 
