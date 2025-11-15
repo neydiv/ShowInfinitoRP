@@ -173,7 +173,7 @@ let DATA = {
     { "bandId": "b3", "name": "Joyería", "points": 0 },
     { "bandId": "b4", "name": "Joyería", "points": 0 },
     { "bandId": "b5", "name": "Joyería", "points": 50 },
-    { "bandId": "b6", "name": "Joyería", "points": 150 },
+    { "bandId": "b6", "name": "Joyería", "points": 200 },
     { "bandId": "b7", "name": "Joyería", "points": 0 },
     { "bandId": "b8", "name": "Joyería", "points": 0 },
 
